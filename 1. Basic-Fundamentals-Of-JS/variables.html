@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Variables Full Example</title>
+</head>
+<body>
+  <h1>JavaScript Variables — Full Example</h1>
+
+  <script>
+    // -----------------------------
+    // 1. Declaring Variables
+    // -----------------------------
+    document.write("<h2>1. Variable Declaration</h2>");
+    var city = "Mumbai";     // var → function scoped, can be redeclared
+    let age = 25;            // let → block scoped, can be reassigned (not redeclared in same scope)
+    const country = "India"; // const → block scoped, cannot be redeclared or reassigned
+    document.write("var city = " + city + "<br>");
+    document.write("let age = " + age + "<br>");
+    document.write("const country = " + country + "<br><br>");
+
+    // -----------------------------
+    // 2. Reassign & Redeclare
+    // -----------------------------
+    document.write("<h2>2. Reassign & Redeclare</h2>");
+    var city = "Delhi"; // Redeclaring var is allowed
+    age = 30;           // Reassigning let is allowed
+    document.write("Redeclared city (var): " + city + "<br>");
+    document.write("Reassigned age (let): " + age + "<br>");
+    document.write("const country cannot be reassigned.<br><br>");
+
+    // -----------------------------
+    // 3. Scope of Variables
+    // -----------------------------
+    document.write("<h2>3. Scope of Variables</h2>");
+    if (true) {
+      var varScoped = "I am function scoped (var)";
+      let letScoped = "I am block scoped (let)";
+      const constScoped = "I am block scoped (const)";
+      document.write("Inside block: " + varScoped + " | " + letScoped + " | " + constScoped + "<br>");
+    }
+    // var is accessible outside block, let/const are not
+    document.write("Outside block (varScoped): " + varScoped + "<br>");
+    document.write("Outside block (letScoped): Not accessible<br>");
+    document.write("Outside block (constScoped): Not accessible<br><br>");
+
+
+    // -----------------------------
+    // 4. Rules for Naming Variables
+    // -----------------------------
+    document.write("<h2>4. Rules for Naming Variables</h2>");
+    let firstName = "Rahul"; // Can use camelCase
+    let _price = 100;        // Can start with underscore
+    let $discount = 50;      // Can start with dollar sign
+    document.write("Valid variable names: " + firstName + ", " + _price + ", " + $discount + "<br>");
+    document.write("Invalid: Cannot start with numbers, cannot use reserved words<br><br>");
+
+    // -----------------------------
+    // 5. Const with Objects & Arrays
+    // -----------------------------
+    document.write("<h2>5. Const with Objects & Arrays</h2>");
+    const person = { name: "Rahul", age: 22 };
+    person.age = 23; // allowed (modifying property)
+    document.write("Const object (after update): " + person.name + ", " + person.age + "<br>");
+    const numbers = [1, 2, 3];
+    numbers.push(4); // allowed (modifying array)
+    document.write("Const array (after push): " + numbers + "<br><br>");
+
+
+    // -----------------------------
+    // 6. Case Sensitivity
+    // -----------------------------
+    document.write("<h2>6. Case Sensitivity</h2>");
+    let myVar = 10;
+    let MyVar = 20; // different variable (case sensitive)
+    document.write("myVar = " + myVar + "<br>");
+    document.write("MyVar = " + MyVar + "<br>");
+    document.write("They are different variables (case-sensitive).<br><br>");
+
+    // -----------------------------
+    // 7. Summary Table
+    // -----------------------------
+    document.write("<h2>7. Summary Table</h2>");
+    document.write("<table border='1' cellpadding='8'>");
+    document.write("<tr><th>Feature</th><th>var</th><th>let</th><th>const</th></tr>");
+    document.write("<tr><td>Scope</td><td>Function</td><td>Block</td><td>Block</td></tr>");
+    document.write("<tr><td>Redeclare</td><td>Yes</td><td>No</td><td>No</td></tr>");
+    document.write("<tr><td>Reassign</td><td>Yes</td><td>Yes</td><td>No</td></tr>");
+    document.write("</table>");
+  </script>
+</body>
+</html>
