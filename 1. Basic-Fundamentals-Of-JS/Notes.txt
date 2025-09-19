@@ -343,3 +343,146 @@ Global Scope → accessible everywhere.
 Function Scope → accessible inside a function.
 
 Block Scope → accessible only inside { } (for let and const).
+
+
+5) DataTypes in JavaScript:
+
+A data type defines the type of data a variable can hold and how it will be stored and manipulated in memory.
+
+Javascript provides diffrent data types to hold diffrent types of values. 
+
+In JavaScript, data types are mainly of two categories:
+
+1. Primitive Data Types (Immutable, stored by value)
+
+2. Non-Primitive (Reference) Data Types (Mutable, stored by reference   )
+
+
+1. Primitive Data Types
+
+Primitive types are the most basic data types. They are:
+
+Stored directly by value (not by reference).
+
+Immutable → Once created, they cannot be changed (any modification creates a new value).
+
+There are 7 primitive types in JavaScript:
+
+✅ List of Primitive Data Types
+
+👉 String → Represents text.
+
+let name = "Rahul"; // double quotes
+let city = 'Mumbai'; // single quotes
+let greet = `Hello ${name}`; // template literals
+
+
+👉 Number → Represents integers, floats, special numbers (NaN, Infinity).
+
+let age = 22;
+let pi = 3.14;
+let invalid = NaN;
+let inf = Infinity;
+
+
+👉 BigInt → Used for very large integers beyond Number limit.
+
+let bigNum = 123456789012345678901234567890n;
+
+
+👉 Boolean → Represents logical values: true or false.
+
+let isActive = true;
+let isCompleted = false;
+
+
+👉 Undefined → Default value of a declared but unassigned variable.
+
+let x;
+console.log(x); // undefined
+
+
+👉 Null → Represents intentional empty value (nothing).
+
+let data = null;
+
+
+👉 Symbol → Unique and immutable, mostly used as object property keys.
+
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+console.log(id1 === id2); // false (always unique)
+
+
+2. Non-Primitive (Reference) Data Types
+
+Non-primitive types are complex and:
+
+Stored by reference (the variable holds a memory address, not the actual value).
+
+Mutable → Values can be modified.
+
+Examples include objects, arrays, and functions.
+
+✅ Common Non-Primitive Data Types:
+
+👉 Object: Collection of key-value pairs.
+
+let person = {
+  name: "Rahul",
+  age: 22
+};
+
+
+👉 Array: Ordered collection (list) of values.
+
+let numbers = [1, 2, 3, 4, 5];
+
+
+👉 Function: A block of reusable code (in JS, functions are objects).
+
+function greet() {
+  return "Hello!";
+}
+
+
+👉 Date, RegExp, Map, Set, WeakMap, WeakSet, etc. : Built-in objects for special purposes.
+
+
+6) Operators in JavaScript:
+
+Operators are symbols or keywords that perform operations on values (operands). 
+In JavaScript they cover arithmetic, assignment, comparison, logical, bitwise, property access, and more.
+
+Overview — Categories of operators
+
+👉 Arithmetic (+ - * / % ** ++ --)
+
+👉 Assignment (=, +=, -= … including logical-assignment &&=, ||=, ??=)
+
+👉 Comparison (< > <= >=, in, instanceof)
+
+👉 Equality (==, ===, !=, !==, Object.is)
+
+👉 Logical (&&, ||, !, ?? (nullish coalescing))
+
+👉 Bitwise (& | ^ ~ << >> >>>)
+
+👉 Unary (typeof, void, delete, unary + - ! ~)
+
+👉 Ternary (condition ? expr1 : expr2)
+
+👉 Misc / Other: comma operator ,, optional chaining ?., spread/rest ..., member access ., computed access [],
+    function call (), new, and await (operator-like)
+
+
+7) Control Flow In JavaScript:
+
+i)Conditional Statement:
+
+A conditional statement in JavaScript is a programming construct that allows the code to make decisions and execute different blocks of code depending on whether a given condition evaluates to true or false.
+
+In simple words:
+➡️ Conditional statements control the flow of a program by checking conditions.
+➡️ If the condition is true → one block of code runs.
+➡️ If the condition is false → another block of code (or nothing) runs.
