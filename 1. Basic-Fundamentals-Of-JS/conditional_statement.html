@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Conditional Statement</title>
+</head>
+
+<body>
+    <h1>Conditional Statement In Javascript</h1>
+    <script>
+        let num = 15;
+
+        // if statement
+        if (num > 0) {
+            document.write("Number is positive <br>");
+        }
+
+        // if...else
+        if (num % 2 === 0) {
+            document.write("Number is even <br>");
+        } else {
+            document.write("Number is odd <br>");
+        }
+
+        // if...else if...else
+        if (num < 0) {
+            document.write("Negative number <br>");
+        } else if (num === 0) {
+            document.write("Zero <br>");
+        } else {
+            document.write("Positive number <br>");
+        }
+
+        // switch
+        switch (num) {
+            case 10:
+                document.write("Number is 10 <br>");
+                break;
+            case 15:
+                document.write("Number is 15 <br>");
+                break;
+            default:
+                document.write("Number is something else <br>");
+        }
+
+        // ternary
+        let result = (num > 10) ? "Greater than 10 <br>" : "10 or smaller";
+        document.write(result);
+
+        //Nested If
+        if(num >10){
+            if(num<=20 && num>=10){
+                document.write("Number is valid!");
+            }
+            else{
+                document.write("Number is not valid");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

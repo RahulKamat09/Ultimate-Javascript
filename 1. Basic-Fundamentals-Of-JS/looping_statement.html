@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Loops & Loop Control Statements</title>
+</head>
+<body>
+  <h2>JavaScript Looping Statements & Loop Control Statements</h2>
+
+  <script>
+    // ------------------------
+    // 1. for loop
+    // ------------------------
+    document.write("<h3>1. for Loop</h3>");
+    // Runs a fixed number of times (from 1 to 5)
+    for (let i = 1; i <= 5; i++) {
+      document.write("Iteration: " + i + "<br>");
+    }
+
+    // ------------------------
+    // 2. while loop
+    // ------------------------
+    document.write("<h3>2. while Loop</h3>");
+    // Runs while condition is true
+    let j = 1;
+    while (j <= 5) {
+      document.write("Number: " + j + "<br>");
+      j++; // increment to avoid infinite loop
+    }
+
+    // ------------------------
+    // 3. do...while loop
+    // ------------------------
+    document.write("<h3>3. do...while Loop</h3>");
+    // Executes at least once (condition checked later)
+    let k = 1;
+    do {
+      document.write("Value: " + k + "<br>");
+      k++;
+    } while (k <= 5);
+
+    // ------------------------
+    // 4. for...in loop
+    // ------------------------
+    document.write("<h3>4. for...in Loop (Object Properties)</h3>");
+    // Iterates over keys (properties) of an object
+    let person = {name: "Rahul", age: 22, city: "Mumbai"};
+    for (let key in person) {
+      document.write(key + ": " + person[key] + "<br>");
+    }
+
+    // ------------------------
+    // 5. for...of loop
+    // ------------------------
+    document.write("<h3>5. for...of Loop (Array Values)</h3>");
+    // Iterates directly over values of iterable objects like arrays
+    let fruits = ["Apple", "Banana", "Mango"];
+    for (let fruit of fruits) {
+      document.write(fruit + "<br>");
+    }
+
+    // ========================
+    // Loop Control Statements
+    // ========================
+    document.write("<hr>");
+    document.write("<h2>Loop Control Statements</h2>");
+
+    // ------------------------
+    // 1. break statement
+    // ------------------------
+    document.write("<h3>1. break Statement</h3>");
+    // Exits the loop completely when condition is met
+    for (let i = 1; i <= 5; i++) {
+      if (i === 3) {
+        break; // stop the loop when i = 3
+      }
+      document.write("Break Example: " + i + "<br>");
+    }
+
+    // ------------------------
+    // 2. continue statement
+    // ------------------------
+    document.write("<h3>2. continue Statement</h3>");
+    // Skips the current iteration when condition is met
+    for (let i = 1; i <= 5; i++) {
+      if (i === 3) {
+        continue; // skip iteration when i = 3
+      }
+      document.write("Continue Example: " + i + "<br>");
+    }
+
+    // ------------------------
+    // 3. Label with break
+    // ------------------------
+    document.write("<h3>3. Label with break</h3>");
+    // Labels allow breaking out of outer loops
+    outerLoop: for (let i = 1; i <= 3; i++) {
+      for (let j = 1; j <= 3; j++) {
+        if (i === 2 && j === 2) {
+          break outerLoop; // breaks the outer loop directly
+        }
+        document.write("i=" + i + ", j=" + j + "<br>");
+      }
+    }
+
+    // ------------------------
+    // 4. Label with continue
+    // ------------------------
+    document.write("<h3>4. Label with continue</h3>");
+    // Labels can also skip to next iteration of an outer loop
+    outer: for (let i = 1; i <= 3; i++) {
+      for (let j = 1; j <= 3; j++) {
+        if (j === 2) {
+          continue outer; // skips current outer loop iteration
+        }
+        document.write("i=" + i + ", j=" + j + "<br>");
+      }
+    }
+  </script>
+</body>
+</html>
