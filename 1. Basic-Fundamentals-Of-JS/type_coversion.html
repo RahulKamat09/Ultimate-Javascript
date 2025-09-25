@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Type Conversion in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        pre {
+            background: #222;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>🔹 Type Conversion in JavaScript</h2>
+    <p>Open the page and see the results of Explicit and Implicit Type Conversion below:</p>
+
+    <h3>Explicit Conversion</h3>
+    <pre id="explicit"></pre>
+
+    <script>
+        // ---------- Explicit Type Conversion ----------
+        let explicitResult = "";
+
+        // String Conversion
+        explicitResult += "String(123) → " + String(123) + "\n";
+        explicitResult += "String(true) → " + String(true) + "\n";
+        explicitResult += "String(null) → " + String(null) + "\n";
+
+        // Number Conversion
+        explicitResult += "Number('123') → " + Number("123") + "\n";
+        explicitResult += "Number('123abc') → " + Number("123abc") + "\n";
+        explicitResult += "parseInt('123abc') → " + parseInt("123abc") + "\n";
+        explicitResult += "parseFloat('3.14abc') → " + parseFloat("3.14abc") + "\n";
+
+        // Boolean Conversion
+        explicitResult += "Boolean(0) → " + Boolean(0) + "\n";
+        explicitResult += "Boolean('') → " + Boolean("") + "\n";
+        explicitResult += "Boolean('hello') → " + Boolean("hello") + "\n";
+
+        document.getElementById("explicit").textContent = explicitResult;
+    </script>
+
+</body>
+
+</html>

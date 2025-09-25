@@ -842,3 +842,139 @@ i=2, j=1
 👉 When i=2 and j=2, it breaks the outer loop (not just the inner loop).
 
 Similarly, you can use continue outerLoop; to skip to the next iteration of the outer loop.
+
+8) Type Conversion In JavaScript:
+
+In JavaScript, values can be converted from one data type to another. This is called Type Conversion.
+
+There are two types of type conversion:
+
+i)Type Casting (Explicit Conversion) → Done manually by the programmer.
+
+ii)Type Coercion (Implicit Conversion) → Done automatically by JavaScript.
+
+
+i)Type Casting (Explicit Conversion):
+
+👉 When you manually convert a value from one type to another using JavaScript functions.
+Done manually by the programmer.
+
+🔹 1. String Conversion
+Definition:
+
+String conversion means explicitly converting any value into a string data type.
+We use:
+
+👉 String(value) → safest, works with everything.
+
+👉 value.toString() → works for numbers, booleans, arrays, objects — but not for null and undefined (throws error).
+
+Example:
+
+// Using String()
+String(123);        // "123"
+String(true);       // "true"
+String(null);       // "null"
+String(undefined);  // "undefined"
+String([1, 2, 3]);  // "1,2,3"
+String({a: 1});     // "[object Object]"
+
+// Using toString()
+(123).toString();   // "123"
+true.toString();    // "true"
+[1, 2, 3].toString(); // "1,2,3"
+
+// ❌ Error cases
+// null.toString();   // ❌ TypeError
+// undefined.toString(); // ❌ TypeError
+
+
+.
+
+🔹 2. Number Conversion
+Definition:
+
+Number conversion means explicitly converting a value into a numeric data type.
+We use:
+
+👉Number(value) → converts to number, returns NaN if not valid.
+
+👉 parseInt(value, radix) → parses a string as an integer.
+
+👉 parseFloat(value) → parses a string as a floating-point number.
+
+👉 Unary +value → shortcut for Number(value).
+
+Example:
+
+// Using Number()
+Number("123");      // 123
+Number("  123 ");   // 123  (ignores spaces)
+Number("123abc");   // NaN  (invalid number)
+Number(true);       // 1
+Number(false);      // 0
+Number(null);       // 0
+Number(undefined);  // NaN
+
+// Using parseInt()
+parseInt("123");      // 123
+parseInt("123.45");   // 123   (only integer part)
+parseInt("123abc");   // 123   (stops at non-numeric)
+parseInt("abc123");   // NaN   (starts with non-numeric)
+parseInt("08", 10);   // 8     (always pass radix 10)
+
+// Using parseFloat()
+parseFloat("123.45");  // 123.45
+parseFloat("123abc");  // 123   (stops at non-numeric)
+parseFloat("abc123");  // NaN
+
+// Using Unary Plus
++"123";    // 123
++true;     // 1
++false;    // 0
++"123abc"; // NaN
+
+
+🔹 3. Boolean Conversion
+Definition:
+
+Boolean conversion means explicitly converting a value into either true or false.
+We use:
+
+👉 Boolean(value) → Converts values into true/false.
+
+👉 Or use double NOT operator !!value (shortcut).
+
+👉 alsy Values (become false):
+
+false
+
+0, -0
+
+0n (BigInt zero)
+
+"" (empty string)
+
+null
+
+undefined
+
+NaN
+
+Everything else is truthy (becomes true).
+
+Example:
+
+Boolean(1);         // true
+Boolean(0);         // false
+Boolean("");        // false
+Boolean("hello");   // true
+Boolean(null);      // false
+Boolean(undefined); // false
+Boolean(NaN);       // false
+Boolean([]);        // true  (empty array is truthy)
+Boolean({});        // true  (empty object is truthy)
+
+// Using !! (shortcut)
+!!"hello";  // true
+!!0;        // false
