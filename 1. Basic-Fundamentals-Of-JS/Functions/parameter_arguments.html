@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+    <style>
+        #data {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Functions:</h1>
+    <h3>Check Console!!!</h3>
+    <div id="data">
+
+    </div>
+    <script>
+        //    🔹 1. What are Parameters ?
+
+        //     👉 Parameters are variables defined inside the function definition.
+        //     They act as placeholders for values that the function will receive when it’s called.
+
+        //     📌 Think of parameters as "input names" for a function.
+
+        //     Syntax:
+
+        // function functionName(parameter1, parameter2) {
+        // use parameters inside function
+        // }
+
+        // Example:
+        function greet(name) { // 'name' is a parameter
+            return "Hello" + name;
+        }
+
+        //    🔹 2. What are Arguments ?
+
+        //      👉 Arguments are the actual values you pass to a function when you call it.
+        //      They replace the parameters inside the function.
+
+        //      📌 Think of arguments as "real values" provided when calling the function.
+
+        //      Example:
+        greet("Rahul"); // "Rahul" is an argument
+
+        var data = document.getElementById("data");
+        data.innerHTML = greet(" Rahul" + "<br>");
+
+
+        // Here:
+
+        // name → parameter(defined in function)
+
+        // "Rahul" → argument(value passed at function call)
+
+        // 🔹 3. Parameters vs Arguments (Quick Comparison):
+
+        // |    Feature    |    Parameters           |      Arguments         |
+        // | ------------- | ----------------------- | -----------------------|
+        // | Defined in... | Function definition     | Function call          |
+        // | Role          | Placeholder variables   | Actual values passed   |
+        // | When used ?   | While creating function | While calling function |
+
+
+        // 🔹 4. Multiple Parameters & Arguments
+        function add(a, b) {   // parameters: a, b
+            return a + b;
+        }
+
+        console.log(add(5, 10)); // arguments: 5, 10 → Output: 15
+
+        // 🔹 5. Default Parameters(ES6 Feature)
+
+        // 👉 If no argument is provided, the parameter will take the default value.
+
+        function greet1(name = " Guest") {
+            return "Hello" + name;
+        }
+
+        data.innerHTML += greet1(" Rahul") + "<br>";
+        data.innerHTML += greet1() + "<br>";
+
+        // 🔹 6. Rest Parameters(...)
+
+        // 👉 Used when we don’t know how many arguments will be passed.
+        // They collect all extra arguments into an array.
+
+        function sum(...numbers) {
+            let total = 0;
+            for (let num of numbers) {
+                total += num;
+            }
+            return total;
+        }
+
+        data.innerHTML += "Sum=" + sum(2, 6, 4) + "<br>";
+
+        // Combined Example:
+
+        function introduce(name, age = 18, ...hobbies) {
+            data.innerHTML += ("Name: " + name + "<br>");       // Parameter: name
+            data.innerHTML += ("Age: " + age + "<br>");         // Parameter with default value
+            data.innerHTML += ("Hobbies: " + hobbies + "<br>"); // Rest parameter
+        }
+
+        introduce("Rahul", 22, "Cricket", "Coding", "Music");
+
+        /*
+        Output:
+        Name: Rahul
+        Age: 22
+        Hobbies: Cricket,Coding,Music
+        */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+    <style>
+        #data {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Functions:</h1>
+    <h3>Check Console!!!</h3>
+    <div id="data">
+
+    </div>
+    <script>
+        // What is a function?
+
+        // A function is a block of code that can be called(invoked).In JavaScript, functions are first - class values — they can be assigned to variables,
+        // passed to / returned from other functions, have properties, and be constructed.
+
+        //🔹 1. Function Declaration
+
+        //Definition:
+        //A function defined using the function keyword with a name.It is hoisted, meaning you can call it before it is defined in code.
+
+        //Example:
+
+        function greet() {
+            return "hello this is function Declaration!!";
+        }
+
+        var d1 = document.getElementById("data");
+        d1.innerHTML = "1. Function Declaration: " + greet() + "<br>";
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+    <style>
+        #data {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Functions:</h1>
+    <h3>Check Console!!!</h3>
+    <div id="data">
+
+    </div>
+    <script>
+        //What is a Function Expression ?
+
+        //👉 A Function Expression is when a function is assigned to a variable(or constant) instead of being declared directly.
+
+        //Functions created this way can be anonymous(no name) or named.
+
+        //Unlike function declarations, function expressions are not hoisted(you can’t call them before defining).
+
+        // Syntax
+        // Anonymous Function Expression:
+
+        // const greet = function () {
+        //     return "Hello World!";
+        // };
+
+        // Named Function Expression:
+
+        // const greet = function sayHello() {
+        //     return "Hello!";
+        // };
+
+        // Example 1: Anonymous Function Expression:
+
+        const add = function (a, b) {
+            return a + b;
+        }
+
+        var d1 = document.getElementById("data");
+        d1.innerHTML = "Function Expression: add 5 + 10= " + add(5, 10) + "<br>";
+
+
+        // Example 2: Named Function Expression (useful for recursion):
+
+        const factorial = function fact(n) {
+            if (n === 0) return 1;
+            return n * fact(n - 1);  // recursive call
+        };
+
+        d1.innerHTML += "Function Expression: Factorial=" + factorial(5) + "<br>";
+
+    </script>
+</body>
+
+</html>
