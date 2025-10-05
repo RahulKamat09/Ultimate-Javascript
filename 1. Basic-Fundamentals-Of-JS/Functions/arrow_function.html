@@ -73,11 +73,23 @@
 
         // Arrow Function
         const sayHelloArrow = (name) => "Hello " + name;
-        
+
         var data = document.getElementById("data");
 
-        data.innerHTML=(sayHello("Rahul") + "<br>");       // Hello Rahul
-        data.innerHTML+=(sayHelloArrow("Rahul"));  // Hello Rahul
+        data.innerHTML = (sayHello("Rahul") + "<br>");// Hello Rahul
+        data.innerHTML += (sayHelloArrow("Rahul" + "<br>"));  // Hello Rahul
+
+        // 2. With No Parameters
+
+        const sayHello1 = () => "Hello there!";
+        data.innerHTML += (sayHello1() + "<br>");  // Output: Hello there!
+
+        // 3. With One Parameter:
+
+        const double = x => x * 2;
+        data.innerHTML += (double(6));   // Output: 12
+
+        
 
     </script>
 </body>

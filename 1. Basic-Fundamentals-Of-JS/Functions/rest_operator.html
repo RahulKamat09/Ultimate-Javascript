@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+</head>
+
+<body>
+
+    <h1>Check Console!!!</h1>
+    <h2>Rest Operator Example</h2>
+    <p id="result"></p>
+    <script>
+        // ⚡ REST OPERATOR IN JAVASCRIPT:
+        // 🔹 1. Definition
+
+        // The Rest Operator(...) in JavaScript is used to collect multiple values into a single array or object.
+        // It allows a function to accept an indefinite number of arguments as an array.
+
+        // 📘 In simple words:
+
+        // The Rest Operator gathers all remaining values into one variable.
+
+        // 🔹 2. Syntax
+        // function functionName(...parameterName) {
+        // parameterName is now an array containing all extra arguments
+        // }
+
+
+        // The ... must be the last parameter in the function definition.
+
+        // The name following ...acts as a normal variable that holds the collected values as an array.
+
+        // 🔹 3. Example 1: Basic Rest Parameter:
+
+        function showNumbers(...numbers) {
+            console.log(numbers);
+        }
+
+        showNumbers(10, 20, 30, 40);
+
+        // ✅ Output:
+
+        // [10, 20, 30, 40]
+
+        // Explanation:
+        // All passed values are gathered into one array named numbers.
+
+        // 🔹 4. Example 2: Combining Rest and Regular Parameters:
+
+        function printDetails(firstName, lastName, ...hobbies) {
+            console.log("Name:", firstName, lastName);
+            console.log("Hobbies:", hobbies);
+        }
+
+        printDetails("Rahul", "Kamat", "Cricket", "Music", "Coding");
+
+        // Explanation:
+
+        // firstName → first argument
+
+        // lastName → second argument
+
+        // ...hobbies → collects all remaining arguments into an array
+
+        // Combined Example:
+
+        function combineNames(firstName, lastName, ...titles) {
+            let info = `Name: ${firstName} ${lastName}<br>Titles: ${titles.join(", ")}`;
+            document.getElementById("result").innerHTML = info;
+        }
+
+        combineNames("Rahul", "Kamat", "Developer", "Gamer", "Designer");
+    </script>
+</body>
+
+</html>
